@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 214, 232, 0.9), transparent 34rem),
+    radial-gradient(circle at 85% 10%, rgba(184, 231, 255, 0.9), transparent 30rem),
+    linear-gradient(135deg, #fff9fd 0%, #f6fbff 45%, #f7fff9 100%);
+  color: #172033;
+}
+
+.dark body {
+  color: #f8fbff;
+  background:
+    radial-gradient(circle at top left, rgba(140, 73, 129, 0.45), transparent 34rem),
+    radial-gradient(circle at 85% 10%, rgba(52, 102, 135, 0.35), transparent 30rem),
+    linear-gradient(135deg, #0f172a 0%, #15112a 45%, #092019 100%);
+}
+
+textarea, input, select, button {
+  font: inherit;
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-[2rem] border border-white/70 bg-white/80 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/75;
+  }
+
+  .pastel-button {
+    @apply rounded-2xl bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 px-6 py-3 font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0;
+  }
+}
